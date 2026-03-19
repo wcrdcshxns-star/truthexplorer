@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font="sans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Premanjan — founder of Young India Writes. Educator, author, and platform builder giving a voice to India's student writers." />
+  <title>About Premanjan — Young India Writes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div id="progress-bar" style="width:0"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-main">Young India Writes</span><span class="logo-sub">🇮🇳 Every Voice Matters</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="poems.html">Poems</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="submit.html">Submit Work</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="font-switcher"><button class="font-trigger" id="font-trigger" aria-expanded="false">Aa ▾</button>
+        <div class="font-dropdown" id="font-dropdown">
+          <div class="font-option active" data-font="sans">SF Pro Display <span class="font-preview" style="font-family:Inter">Aa</span></div>
+          <div class="font-option" data-font="serif">Times New Roman <span class="font-preview" style="font-family:'Playfair Display'">Aa</span></div>
+          <div class="font-option" data-font="typewriter">Typewriter <span class="font-preview" style="font-family:'Courier Prime'">Aa</span></div>
+        </div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle">🌙</button>
+      <a href="submit.html" class="btn btn-primary nav-cta">✍️ Submit Work</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav-panel" id="mobile-nav-panel">
+  <ul class="nav-links mobile-nav-links">
+    <li><a href="index.html">🏠 Home</a></li><li><a href="poems.html">📜 Poems</a></li>
+    <li><a href="stories.html">📚 Stories</a></li><li><a href="about.html">👤 About</a></li>
+    <li><a href="submit.html">✍️ Submit Work</a></li>
+  </ul>
+  <div class="mobile-nav-font-row">
+    <button class="mobile-font-btn active" data-font="sans">SF Pro</button>
+    <button class="mobile-font-btn" data-font="serif">Times NR</button>
+    <button class="mobile-font-btn" data-font="typewriter">Typewriter</button>
+  </div>
+</div>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+
+
+<!-- ── Profile Hero ──────────────────────────────────────────-->
+<section class="profile-hero">
+  <div class="profile-hero-inner">
+    <div class="profile-photo" role="img" aria-label="Premanjan profile photo">🎓</div>
+    <div>
+      <div class="eyebrow">👤 Founder &amp; Editor-in-Chief</div>
+      <h1 class="profile-name">Premanjan</h1>
+      <div class="profile-role">Educator · Author · Platform Builder · Voice for Young India</div>
+      <p class="profile-bio">
+        I am an educator, writer, and relentless believer in the radical power of student voice. I have spent years watching brilliant young minds across India be silenced — not because they had nothing to say, but because there was no stage worthy of them.
+        <br><br>
+        Young India Writes is my answer to that silence. It is the platform I wish had existed when I was in school.
+      </p>
+      <div class="profile-actions">
+        <a href="submit.html" class="btn btn-primary">✍️ Submit Your Work</a>
+        <a href="mailto:premanjan@youngindiawr.in" class="btn btn-secondary">📧 Write to Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Mission Cards ─────────────────────────────────────────-->
+<section class="section">
+  <div class="container">
+    <div class="section-header centered">
+      <div class="eyebrow">🎯 What I Believe</div>
+      <h2 class="section-title">Mission, Vision &amp; Purpose</h2>
+      <p class="section-desc" style="max-width:560px; margin:0 auto;">Four pillars that define everything this platform does — and everything it refuses to compromise on.</p>
+    </div>
+
+    <div class="mission-grid">
+      <div class="mission-card">
+        <div class="mission-icon">✊</div>
+        <h3 class="mission-title">Every Voice Deserves Permanence</h3>
+        <p class="mission-desc">Literature has always belonged to the privileged — those who went to the right schools, knew the right publishers, spoke the right language. Young India Writes dismantles this entirely. Whether you write in Hindi, Tamil, Urdu, or English, whether you are from Patna or Pune — your voice matters here, and it will be preserved.</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon">🛡️</div>
+        <h3 class="mission-title">Originality is Non-Negotiable</h3>
+        <p class="mission-desc">We use enterprise-grade AI tools to verify every submission — not to punish students, but to protect those who genuinely create. When your poem is published here, it carries our guarantee: this is real, original, yours. That certificate means something. It always will.</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon">🌱</div>
+        <h3 class="mission-title">A Career Begins with One Published Line</h3>
+        <p class="mission-desc">India's greatest authors did not start with novels. They started with a single piece of writing that someone took seriously. This platform is designed to be that first serious publication for thousands of students — a beginning, not an endpoint. A credential, not a compliment.</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-icon">🇮🇳</div>
+        <h3 class="mission-title">Multilingual India, One Stage</h3>
+        <p class="mission-desc">India speaks in 122 scheduled languages. Our literary culture cannot live only in English. Young India Writes is committed to publishing in all major Indian languages — treating every tongue with equal editorial care and equal visibility. A poem in Odia deserves the same spotlight as one in English.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Vision Statement ───────────────────────────────────────-->
+<section style="background:var(--bg-secondary); padding:var(--space-3xl) var(--space-lg); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div style="max-width:760px; margin:0 auto; text-align:center;">
+    <div class="eyebrow" style="justify-content:center;">🔭 The Vision</div>
+    <blockquote style="font-family:var(--font-serif); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:700; line-height:1.4; color:var(--text-primary); font-style:italic; margin-bottom:var(--space-xl);">
+      "By 2030, I want Young India Writes to be the first platform every Indian student thinks of when they finish a poem — the way a musician thinks of Spotify. Literature needs its own platform. And that platform should be Indian."
+    </blockquote>
+    <p style="font-size:16px; color:var(--text-secondary); line-height:1.75;">
+      This is not just a website. It is infrastructure for the next generation of Indian literature. We are building the publishing layer, the discovery layer, the monetization layer — and we are building it for students, by people who believe in them completely.
+    </p>
+  </div>
+</section>
+
+
+<!-- ── Timeline + Why I Built This ───────────────────────────-->
+<section class="section">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3xl); align-items:start;">
+
+      <!-- Timeline -->
+      <div>
+        <div class="eyebrow">📅 The Journey</div>
+        <h2 class="section-title">Roadmap</h2>
+        <p class="section-desc" style="margin-bottom:var(--space-2xl);">From a classroom idea to a national platform.</p>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-year">2023</div>
+            <div class="tl-title">The Idea Is Born</div>
+            <div class="tl-desc">A student in my class wrote a poem that deserved to be published. There was nowhere worthy to publish it. Young India Writes was conceived that evening.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">Early 2025</div>
+            <div class="tl-title">Platform Development Begins</div>
+            <div class="tl-desc">Research, architecture, API selection. The mission is finalized: "Every student has a voice. This platform gives it permanence."</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">March 21, 2025</div>
+            <div class="tl-title">🚀 Launch — International Poetry Day</div>
+            <div class="tl-desc">Young India Writes goes live to the world. First 100 students submit. First three featured poems selected by the editorial team.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2025 Q4</div>
+            <div class="tl-title">First National Writing Competition</div>
+            <div class="tl-desc">Annual competition with prizes, certificates, and national media coverage. Top works sent to major Indian publishers.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2026</div>
+            <div class="tl-title">Physical Anthology — Print Edition</div>
+            <div class="tl-desc">The best 100 poems and 20 stories published as India's first curated student literary anthology. Distributed to 1,000+ schools.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">2030</div>
+            <div class="tl-title">India's Literary Infrastructure</div>
+            <div class="tl-desc">Every student. Every language. Every state. The platform that gave India's next generation of writers their first permanent home.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why I Built This -->
+      <div>
+        <div class="eyebrow">💬 Personal Statement</div>
+        <h2 class="section-title">Why I Built This</h2>
+        <div style="font-size:15px; line-height:1.85; color:var(--text-secondary); display:flex; flex-direction:column; gap:var(--space-lg);">
+          <p>I have sat in enough classrooms to know that India's most gifted writers are not in MFA programs or literary festivals. They are in government schools in Jharkhand, in Navodaya Vidyalayas in Odisha, in the middle rows of crowded classrooms in Bihar — writing in notebooks that no one ever reads.</p>
+          <p>India produces 1.4 billion people and has fewer than 500 active literary magazines. The gatekeeping is brutal. The barriers are economic, linguistic, and geographic. A student who writes in a regional language is considered unliterary. A student from a small town is considered unworthy of a national stage. I disagree with all of that. Completely.</p>
+          <p>Young India Writes is my disagreement made into a platform. It is the infrastructure I am building because I believe, without reservation, that the next Premchand is sitting in a classroom right now waiting for someone to take their writing seriously.</p>
+          <p>If one student, five years from now, says "I became a writer because I was published on Young India Writes at fourteen" — then every line of code, every rupee spent, every hour building this was worth it.</p>
+        </div>
+
+        <div style="margin-top:var(--space-xl); padding:var(--space-lg); background:var(--bg-secondary); border-radius:var(--r-lg); border:1px solid var(--border);">
+          <div style="display:flex; align-items:center; gap:var(--space-md);">
+            <div style="width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--saffron),var(--india-green)); display:flex; align-items:center; justify-content:center; font-size:1.8rem; flex-shrink:0;">🎓</div>
+            <div>
+              <div style="font-weight:700; font-size:15px; color:var(--text-primary);">Premanjan</div>
+              <div style="font-size:13px; color:var(--text-muted);">Founder &amp; Editor-in-Chief, Young India Writes</div>
+              <div style="font-size:12px; color:var(--saffron); margin-top:2px; font-weight:600;">premanjan@youngindiawr.in</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Dark Statement Strip ──────────────────────────────────-->
+<section style="background:linear-gradient(135deg,#1A1A2E 0%, #16213E 60%, #0F3460 100%); padding:var(--space-3xl) var(--space-lg); color:#fff;">
+  <div style="max-width:720px; margin:0 auto;">
+    <div class="eyebrow" style="color:rgba(255,179,71,0.9);">✦ A Promise</div>
+    <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700; margin-bottom:var(--space-xl); line-height:1.3;">
+      We will never gatekeep a student's voice based on language, location, or school reputation.
+    </h2>
+    <p style="font-size:16px; line-height:1.8; color:rgba(255,255,255,0.8); margin-bottom:var(--space-xl);">
+      The only standard we maintain is originality. If you wrote it yourself, if it came from something true inside you — this platform will publish it, celebrate it, and preserve it permanently.
+    </p>
+    <a href="submit.html" class="btn btn-primary btn-lg">Submit Your Original Work →</a>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><span class="logo-main">Young India Writes</span><span class="logo-sub">🇮🇳 Every Voice Matters</span></a><p class="footer-brand-desc">Founded by an educator who believes every student deserves a stage.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="poems.html">Poems</a></li><li><a href="stories.html">Stories</a></li><li><a href="submit.html">Submit</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="#">Anti-Plagiarism</a></li><li><a href="#">Guidelines</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Twitter</a></li><li><a href="mailto:premanjan@youngindiawr.in">Email</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Young India Writes</span><div class="footer-made-in">Made with ❤️ in 🇮🇳 India</div></div>
+  </div>
+</footer>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+<button class="scroll-top-btn" aria-label="Scroll to top">↑</button>
+<script src="js/script.js"></script>
+</body>
+</html>

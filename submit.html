@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font="sans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Submit your original poem or short story to Young India Writes. Anti-plagiarism verified publication for Indian school students." />
+  <title>Submit Your Work — Young India Writes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div id="progress-bar" style="width:0" aria-hidden="true"></div>
+
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">Young India Writes</span>
+      <span class="logo-sub">🇮🇳 Every Voice Matters</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="poems.html">Poems</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="submit.html" class="active">Submit Work</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="font-switcher">
+        <button class="font-trigger" id="font-trigger" aria-expanded="false">Aa ▾</button>
+        <div class="font-dropdown" id="font-dropdown">
+          <div class="font-option active" data-font="sans">SF Pro Display <span class="font-preview" style="font-family:Inter">Aa</span></div>
+          <div class="font-option" data-font="serif">Times New Roman <span class="font-preview" style="font-family:'Playfair Display'">Aa</span></div>
+          <div class="font-option" data-font="typewriter">Typewriter <span class="font-preview" style="font-family:'Courier Prime'">Aa</span></div>
+        </div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav-panel" id="mobile-nav-panel">
+  <ul class="nav-links mobile-nav-links">
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="poems.html">📜 Poems</a></li>
+    <li><a href="stories.html">📚 Stories</a></li>
+    <li><a href="about.html">👤 About</a></li>
+    <li><a href="submit.html">✍️ Submit Work</a></li>
+  </ul>
+  <div class="mobile-nav-font-row">
+    <button class="mobile-font-btn active" data-font="sans">SF Pro</button>
+    <button class="mobile-font-btn" data-font="serif">Times NR</button>
+    <button class="mobile-font-btn" data-font="typewriter">Typewriter</button>
+  </div>
+</div>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  MAIN FORM                                                  -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<main class="submit-wrap">
+
+  <div class="submit-card">
+
+    <!-- Form Header -->
+    <div style="margin-bottom:var(--space-xl);">
+      <div class="eyebrow">✍️ Submission Portal</div>
+      <h1 style="font-family:var(--font-serif); font-size:clamp(1.8rem,3vw,2.4rem); font-weight:700; color:var(--text-primary); margin-bottom:8px; line-height:1.2;">
+        Submit Your Work
+      </h1>
+      <p style="font-size:15px; color:var(--text-secondary); line-height:1.65; padding-bottom:var(--space-xl); border-bottom:1px solid var(--border);">
+        Share your original poem or short story with India. Every submission is processed through our AI-powered anti-plagiarism engine before publication. A ₹49 submission fee funds the platform and the annual student awards.
+      </p>
+    </div>
+
+    <!-- Step Progress Bar -->
+    <div class="step-bar" aria-label="Form progress">
+      <div class="step-segment done" id="seg-1"></div>
+      <div class="step-segment" id="seg-2"></div>
+      <div class="step-segment" id="seg-3"></div>
+    </div>
+    <div class="step-labels" aria-live="polite">
+      <span class="step-label active" id="lbl-1">1 · Your Details</span>
+      <span class="step-label" id="lbl-2">2 · Your Work</span>
+      <span class="step-label" id="lbl-3">3 · Pay &amp; Submit</span>
+    </div>
+
+    <form id="submission-form" novalidate>
+
+      <!-- ── STEP 1: Author Details ───────────────────────── -->
+      <div id="step-1">
+        <h2 class="form-section-title">About You</h2>
+        <p class="form-section-desc">We need these details for your author profile and publication certificate.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="author-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="author-name" class="form-input"
+              placeholder="e.g. Ananya Sharma" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="author-class">Class <span class="req">*</span></label>
+            <select id="author-class" class="form-select" required>
+              <option value="">Select your class</option>
+              <option>Class 6</option><option>Class 7</option><option>Class 8</option>
+              <option>Class 9</option><option>Class 10</option><option>Class 11</option>
+              <option>Class 12</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="school-name">School Name <span class="req">*</span></label>
+          <input type="text" id="school-name" class="form-input"
+            placeholder="e.g. Delhi Public School, R.K. Puram" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="author-city">City <span class="req">*</span></label>
+            <input type="text" id="author-city" class="form-input" placeholder="e.g. New Delhi" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="author-state">State <span class="req">*</span></label>
+            <select id="author-state" class="form-select" required>
+              <option value="">Select your state</option>
+              <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
+              <option>Chhattisgarh</option><option>Delhi</option><option>Goa</option>
+              <option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option>
+              <option>Jharkhand</option><option>Karnataka</option><option>Kerala</option>
+              <option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option>
+              <option>Meghalaya</option><option>Odisha</option><option>Punjab</option>
+              <option>Rajasthan</option><option>Tamil Nadu</option><option>Telangana</option>
+              <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="author-email">Email Address <span class="req">*</span></label>
+          <input type="email" id="author-email" class="form-input"
+            placeholder="your@email.com" required autocomplete="email" />
+          <p class="form-hint">Confirmation, certificate, and publication notice will be sent here.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="author-phone">Mobile Number</label>
+          <input type="tel" id="author-phone" class="form-input"
+            placeholder="+91 98765 43210" autocomplete="tel" />
+          <p class="form-hint">Optional. Used for SMS notification when your work is published.</p>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-block btn-lg" id="btn-next-1"
+          style="border-radius:var(--r-md); margin-top:var(--space-lg);">
+          Continue to Your Work →
+        </button>
+      </div><!-- /step-1 -->
+
+
+      <!-- ── STEP 2: Content & Plagiarism ────────────────── -->
+      <div id="step-2" style="display:none;">
+        <h2 class="form-section-title">Your Work</h2>
+        <p class="form-section-desc">
+          Paste or type your poem or story below. It will be checked for originality before you can proceed to payment.
+        </p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="work-category">Category <span class="req">*</span></label>
+            <select id="work-category" class="form-select" required>
+              <option value="">Select category</option>
+              <option value="poem">📜 Poem</option>
+              <option value="story">📚 Short Story</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="work-language">Language <span class="req">*</span></label>
+            <select id="work-language" class="form-select" required>
+              <option value="">Select language</option>
+              <option>English</option><option>Hindi</option><option>Tamil</option>
+              <option>Telugu</option><option>Marathi</option><option>Bengali</option>
+              <option>Gujarati</option><option>Kannada</option><option>Malayalam</option>
+              <option>Punjabi</option><option>Odia</option><option>Urdu</option>
+              <option>Assamese</option><option>Sanskrit</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="work-title">Title of Your Work <span class="req">*</span></label>
+          <input type="text" id="work-title" class="form-input"
+            placeholder="Give your work a meaningful title" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="work-content">
+            Your Poem / Story <span class="req">*</span>
+          </label>
+          <textarea id="work-content" class="form-textarea"
+            placeholder="Type or paste your original work here..." required></textarea>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:6px;">
+            <span class="form-hint">Minimum: 10 lines for poems · 300 words for stories</span>
+            <span id="word-count" style="font-size:12px; color:var(--text-muted); font-weight:600;">0 words</span>
+          </div>
+        </div>
+
+        <!-- Cover Image Upload -->
+        <div class="form-group">
+          <label class="form-label">Cover Image <span style="font-weight:400; text-transform:none; letter-spacing:0; color:var(--text-muted)">(optional)</span></label>
+          <div class="file-drop" id="file-drop" role="button" tabindex="0"
+            aria-label="Upload cover image — click or drag and drop">
+            <div class="file-drop-icon">🖼️</div>
+            <p class="file-drop-text">
+              <strong>Click to upload</strong> or drag &amp; drop<br>
+              <span>PNG, JPG, WebP · Max 5 MB</span>
+            </p>
+            <input type="file" id="img-input" accept="image/*" style="display:none" aria-label="Upload image" />
+          </div>
+          <div id="img-preview" style="display:none; margin-top:12px; position:relative;">
+            <img id="preview-img" style="width:100%; max-height:200px; object-fit:cover; border-radius:var(--r-md);" alt="Your cover image preview" />
+            <button type="button" id="remove-img"
+              style="position:absolute; top:8px; right:8px; background:rgba(0,0,0,0.55); color:#fff; border:none; border-radius:50%; width:28px; height:28px; cursor:pointer; font-size:15px; line-height:1;"
+              aria-label="Remove image">×</button>
+          </div>
+        </div>
+
+        <!-- Anti-Plagiarism Panel -->
+        <div class="plagiarism-panel">
+          <div class="plagiarism-panel-title">
+            🛡️ Anti-Plagiarism Verification
+            <span style="margin-left:auto; font-size:11px; font-weight:400; color:var(--text-muted);">
+              Powered by Copyleaks API
+            </span>
+          </div>
+
+          <div class="check-row">
+            <div class="check-icon-wrap pending" id="ci-1" aria-label="Originality scan status">⏳</div>
+            <div>
+              <div class="check-label">Originality Scan</div>
+              <div class="check-sub">Checks against 60B+ web pages and academic databases</div>
+            </div>
+          </div>
+          <div class="check-row">
+            <div class="check-icon-wrap pending" id="ci-2" aria-label="AI writing score status">⏳</div>
+            <div>
+              <div class="check-label">AI Quality Score</div>
+              <div class="check-sub">Assesses writing quality, originality, and creativity</div>
+            </div>
+          </div>
+          <div class="check-row">
+            <div class="check-icon-wrap pending" id="ci-3" aria-label="Database check status">⏳</div>
+            <div>
+              <div class="check-label">YIW Database Check</div>
+              <div class="check-sub">Verified against all existing Young India Writes submissions</div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-secondary btn-block" id="run-check-btn"
+            style="margin-top:var(--space-md); border-radius:var(--r-md);">
+            🔍 Run Plagiarism Check
+          </button>
+          <div class="plagiarism-result-banner" id="check-banner" role="alert"></div>
+        </div>
+
+        <div class="form-nav" style="margin-top:var(--space-xl);">
+          <button type="button" class="btn btn-secondary" id="btn-back-2" style="flex-shrink:0;">
+            ← Back
+          </button>
+          <button type="button" class="btn btn-primary" id="btn-next-2"
+            style="flex:1; border-radius:var(--r-md); justify-content:center;">
+            Continue to Payment →
+          </button>
+        </div>
+      </div><!-- /step-2 -->
+
+
+      <!-- ── STEP 3: Review & Payment ─────────────────────── -->
+      <div id="step-3" style="display:none;">
+        <h2 class="form-section-title">Review &amp; Pay</h2>
+        <p class="form-section-desc">Check your submission details, then complete the ₹49 payment to publish.</p>
+
+        <!-- Summary -->
+        <div class="summary-card">
+          <h3>📋 Submission Summary</h3>
+          <div class="summary-row"><span class="key">Author</span><span class="val" id="s-name">—</span></div>
+          <div class="summary-row"><span class="key">School</span><span class="val" id="s-school">—</span></div>
+          <div class="summary-row"><span class="key">Class</span><span class="val" id="s-class">—</span></div>
+          <div class="summary-row"><span class="key">Title</span><span class="val" id="s-title">—</span></div>
+          <div class="summary-row"><span class="key">Category</span><span class="val" id="s-category">—</span></div>
+          <div class="summary-row"><span class="key">Language</span><span class="val" id="s-language">—</span></div>
+          <div class="summary-row"><span class="key">Originality</span><span class="val" id="s-score" style="color:var(--india-green)">Verified ✅</span></div>
+        </div>
+
+        <!-- Fee Box -->
+        <div class="fee-box">
+          <div class="fee-top">
+            <div>
+              <div class="fee-desc">Submission Fee</div>
+              <div class="fee-amount"><span>₹</span>49</div>
+            </div>
+            <div class="fee-icon">📜</div>
+          </div>
+          <ul class="fee-list">
+            <li>Publication on Young India Writes</li>
+            <li>Digital certificate of publication (PDF)</li>
+            <li>Entry into the Annual National Writing Competition</li>
+            <li>Eligibility to be featured in Top 3 Poems</li>
+            <li>Permanent author profile &amp; portfolio page</li>
+            <li>Consideration for the annual print anthology</li>
+          </ul>
+        </div>
+
+        <!-- Originality Declaration -->
+        <div class="terms-row">
+          <input type="checkbox" id="terms-check" required aria-required="true" />
+          <label for="terms-check">
+            I solemnly confirm that this work is entirely my own original creation. I have not copied any part of it from any book, website, AI, or other source. I agree to the
+            <a href="#" style="color:var(--saffron);">Terms of Service</a> and
+            <a href="#" style="color:var(--saffron);">Publication Policy</a>.
+          </label>
+        </div>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-secondary" id="btn-back-3" style="flex-shrink:0;">
+            ← Back
+          </button>
+          <button type="submit" class="btn" id="btn-pay"
+            style="flex:1; background:#2d6be4; color:#fff; border-radius:var(--r-md); justify-content:center; font-size:16px; font-weight:700; padding:14px;">
+            💳 Pay ₹49 &amp; Submit
+          </button>
+        </div>
+
+        <div style="text-align:center; margin-top:var(--space-md); font-size:12px; color:var(--text-muted); display:flex; align-items:center; justify-content:center; gap:5px;">
+          🔒 Secured by Razorpay · 256-bit SSL · UPI · Cards · Net Banking
+        </div>
+      </div><!-- /step-3 -->
+
+    </form>
+  </div><!-- /submit-card -->
+</main>
+
+
+<!-- Toast -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+<button class="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+<!-- Razorpay SDK -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

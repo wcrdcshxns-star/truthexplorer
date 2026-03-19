@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font="sans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin Dashboard — Young India Writes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div id="progress-bar" style="width:0"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">Young India Writes</span>
+      <span class="logo-sub">🛡️ Admin Panel</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">← Back to Site</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <span style="font-size:13px; color:var(--text-muted); padding:6px 12px; background:var(--bg-secondary); border-radius:var(--r-sm); border:1px solid var(--border);">👤 Premanjan</span>
+    </div>
+  </div>
+</nav>
+
+<div class="admin-wrap" id="admin-wrap">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar" role="navigation" aria-label="Admin navigation">
+    <div class="admin-sidebar-header">
+      <h2>Admin Panel</h2>
+    </div>
+    <nav>
+      <a class="admin-nav-item active" data-section="overview" href="#">
+        <span class="icon">📊</span> Overview
+      </a>
+      <a class="admin-nav-item" data-section="submissions" href="#">
+        <span class="icon">📝</span> Submissions
+      </a>
+      <a class="admin-nav-item" data-section="featured" href="#">
+        <span class="icon">⭐</span> Featured Poems
+      </a>
+      <a class="admin-nav-item" data-section="payments" href="#">
+        <span class="icon">💳</span> Payments
+      </a>
+      <a class="admin-nav-item" data-section="users" href="#">
+        <span class="icon">👥</span> Authors
+      </a>
+      <a class="admin-nav-item" data-section="settings" href="#">
+        <span class="icon">⚙️</span> Settings
+      </a>
+    </nav>
+    <div style="position:absolute; bottom:var(--space-xl); left:0; right:0; padding:0 var(--space-lg);">
+      <div style="padding:var(--space-md); background:rgba(255,153,51,0.08); border:1px solid rgba(255,153,51,0.2); border-radius:var(--r-md);">
+        <div style="font-size:11px; font-weight:700; color:var(--saffron); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">Launch Countdown</div>
+        <div style="font-size:1.4rem; font-weight:700; color:var(--text-primary); font-family:var(--font-serif);" id="countdown-val">—</div>
+        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">until March 21, 2025</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="admin-main" role="main">
+
+    <!-- ── OVERVIEW SECTION ────────────────────────────────── -->
+    <div class="admin-section" id="admin-overview">
+      <div class="admin-header">
+        <h1>Dashboard Overview</h1>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <span style="font-size:12px; color:var(--text-muted); padding:6px 12px; background:var(--bg-secondary); border-radius:var(--r-sm); border:1px solid var(--border);">
+            Last updated: just now
+          </span>
+          <button class="btn btn-primary btn-sm" onclick="window.Toast?.show('Data refreshed ✅','success',2000)">
+            🔄 Refresh
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-card-value">2,418</div>
+          <div class="stat-card-label">Total Submissions</div>
+          <div class="stat-card-trend up">↑ +142 this week</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">1,876</div>
+          <div class="stat-card-label">Published Works</div>
+          <div class="stat-card-trend up">↑ +89 this week</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">₹94,082</div>
+          <div class="stat-card-label">Total Revenue</div>
+          <div class="stat-card-trend up">↑ ₹6,958 this week</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">186</div>
+          <div class="stat-card-label">Schools Registered</div>
+          <div class="stat-card-trend neutral">23 states covered</div>
+        </div>
+      </div>
+
+      <!-- Second row stats -->
+      <div class="stats-row" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="stat-card">
+          <div class="stat-card-value">312</div>
+          <div class="stat-card-label">Pending Review</div>
+          <div class="stat-card-trend neutral">Needs attention</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">87</div>
+          <div class="stat-card-label">Rejected (Plagiarism)</div>
+          <div class="stat-card-trend neutral">3.6% rejection rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">41.2k</div>
+          <div class="stat-card-label">Total Reads</div>
+          <div class="stat-card-trend up">↑ +4.2k this week</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-value">12</div>
+          <div class="stat-card-label">Languages Published</div>
+          <div class="stat-card-trend up">↑ 2 new this month</div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="admin-table-wrap" style="margin-top:var(--space-xl);">
+        <div class="admin-table-header">
+          <h2>Recent Submissions</h2>
+          <button class="btn btn-secondary btn-sm" onclick="document.querySelector('[data-section=submissions]').click()">View All →</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Author</th>
+                <th>Title</th>
+                <th>School</th>
+                <th>Category</th>
+                <th>Language</th>
+                <th>Paid</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="row-001">
+                <td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">AS</div><strong>Ananya Sharma</strong></div></td>
+                <td>The River Remembers</td>
+                <td>DPS, Delhi</td>
+                <td>Poem</td>
+                <td><span class="lang-chip">Hindi</span></td>
+                <td style="color:var(--india-green); font-weight:600;">✓ ₹57.82</td>
+                <td><span class="badge badge-pending">Pending</span></td>
+                <td><div class="action-btns">
+                  <button class="act-btn approve" data-id="001" data-action="approve">Approve</button>
+                  <button class="act-btn reject"  data-id="001" data-action="reject">Reject</button>
+                  <button class="act-btn feature" data-id="001" data-action="feature">⭐ Feature</button>
+                </div></td>
+              </tr>
+              <tr id="row-002">
+                <td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">RM</div><strong>Rajan Mehta</strong></div></td>
+                <td>Iron and Ink</td>
+                <td>KV, Chandigarh</td>
+                <td>Poem</td>
+                <td><span class="lang-chip">English</span></td>
+                <td style="color:var(--india-green); font-weight:600;">✓ ₹57.82</td>
+                <td><span class="badge badge-approved">Approved</span></td>
+                <td><div class="action-btns">
+                  <button class="act-btn feature" data-id="002" data-action="feature">⭐ Feature</button>
+                </div></td>
+              </tr>
+              <tr id="row-003">
+                <td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">PN</div><strong>Priya Nair</strong></div></td>
+                <td>माँ की रोटियाँ</td>
+                <td>Navodaya, Patna</td>
+                <td>Poem</td>
+                <td><span class="lang-chip">Hindi</span></td>
+                <td style="color:var(--india-green); font-weight:600;">✓ ₹57.82</td>
+                <td><span class="badge badge-featured">⭐ Featured</span></td>
+                <td><div class="action-btns">
+                  <button class="act-btn reject" data-id="003" data-action="reject">Unfeature</button>
+                </div></td>
+              </tr>
+              <tr id="row-004">
+                <td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">VK</div><strong>Vikram Kumar</strong></div></td>
+                <td>The Last Bench</td>
+                <td>St. Xavier's, Patna</td>
+                <td>Story</td>
+                <td><span class="lang-chip">Hindi</span></td>
+                <td style="color:var(--india-green); font-weight:600;">✓ ₹57.82</td>
+                <td><span class="badge badge-pending">Pending</span></td>
+                <td><div class="action-btns">
+                  <button class="act-btn approve" data-id="004" data-action="approve">Approve</button>
+                  <button class="act-btn reject"  data-id="004" data-action="reject">Reject</button>
+                </div></td>
+              </tr>
+              <tr id="row-005">
+                <td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">ZK</div><strong>Zainab Khan</strong></div></td>
+                <td>Signal No. 7</td>
+                <td>Bombay Scottish</td>
+                <td>Story</td>
+                <td><span class="lang-chip">English</span></td>
+                <td style="color:var(--india-green); font-weight:600;">✓ ₹57.82</td>
+                <td><span class="badge badge-approved">Approved</span></td>
+                <td><div class="action-btns">
+                  <button class="act-btn feature" data-id="005" data-action="feature">⭐ Feature</button>
+                </div></td>
+              </tr>
+              <tr id="row-006">
+                <td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">RG</div><strong>Rohit Gupta</strong></div></td>
+                <td>Copy of a Copy</td>
+                <td>DAV, Lucknow</td>
+                <td>Poem</td>
+                <td><span class="lang-chip">Hindi</span></td>
+                <td style="color:#dc2626; font-weight:600;">✗ Unpaid</td>
+                <td><span class="badge badge-rejected">Rejected</span></td>
+                <td><div class="action-btns"><span style="font-size:12px; color:var(--text-muted);">68% similarity</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /overview -->
+
+
+    <!-- ── SUBMISSIONS SECTION ─────────────────────────────── -->
+    <div class="admin-section" id="admin-submissions" style="display:none;">
+      <div class="admin-header">
+        <h1>All Submissions</h1>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <select class="filter-select" style="min-width:140px;" onchange="window.Toast?.show('Filter applied','info',1500)">
+            <option>All Statuses</option>
+            <option>Pending</option>
+            <option>Approved</option>
+            <option>Rejected</option>
+            <option>Featured</option>
+          </select>
+          <select class="filter-select" style="min-width:120px;">
+            <option>All Types</option>
+            <option>Poem</option>
+            <option>Story</option>
+          </select>
+          <input type="search" class="filter-search" placeholder="Search by name, title..." style="max-width:240px;" />
+        </div>
+      </div>
+
+      <div class="admin-table-wrap">
+        <div class="admin-table-header">
+          <h2>312 Pending · 1,876 Approved · 87 Rejected</h2>
+          <button class="btn btn-primary btn-sm" onclick="window.Toast?.show('Bulk approve feature coming in v1.1','info',3000)">
+            Bulk Approve Selected
+          </button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th><input type="checkbox" style="accent-color:var(--saffron)" aria-label="Select all" /></th>
+                <th>Author</th>
+                <th>Title</th>
+                <th>School · City</th>
+                <th>Type</th>
+                <th>Language</th>
+                <th>Plagiarism</th>
+                <th>Paid</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="row-a001">
+                <td><input type="checkbox" style="accent-color:var(--saffron)" /></td>
+                <td><strong>Ananya Sharma</strong><div style="font-size:11px;color:var(--text-muted);">Class 11</div></td>
+                <td>The River Remembers</td>
+                <td>DPS, Delhi</td>
+                <td>📜 Poem</td>
+                <td><span class="lang-chip">Hindi</span></td>
+                <td style="color:var(--india-green); font-weight:700;">4%</td>
+                <td style="color:var(--india-green); font-weight:600;">✓</td>
+                <td><span class="badge badge-pending">Pending</span></td>
+                <td style="white-space:nowrap; font-size:12px;">Mar 17, 2025</td>
+                <td><div class="action-btns">
+                  <button class="act-btn approve" data-id="a001" data-action="approve">✓</button>
+                  <button class="act-btn reject"  data-id="a001" data-action="reject">✗</button>
+                  <button class="act-btn feature" data-id="a001" data-action="feature">⭐</button>
+                </div></td>
+              </tr>
+              <tr id="row-a002">
+                <td><input type="checkbox" style="accent-color:var(--saffron)" /></td>
+                <td><strong>Pooja Sharma</strong><div style="font-size:11px;color:var(--text-muted);">Class 8</div></td>
+                <td>December Morning</td>
+                <td>St. Xavier's, Jaipur</td>
+                <td>📜 Poem</td>
+                <td><span class="lang-chip">Hindi</span></td>
+                <td style="color:var(--india-green); font-weight:700;">2%</td>
+                <td style="color:var(--india-green); font-weight:600;">✓</td>
+                <td><span class="badge badge-pending">Pending</span></td>
+                <td style="white-space:nowrap; font-size:12px;">Mar 17, 2025</td>
+                <td><div class="action-btns">
+                  <button class="act-btn approve" data-id="a002" data-action="approve">✓</button>
+                  <button class="act-btn reject"  data-id="a002" data-action="reject">✗</button>
+                  <button class="act-btn feature" data-id="a002" data-action="feature">⭐</button>
+                </div></td>
+              </tr>
+              <tr id="row-a003">
+                <td><input type="checkbox" style="accent-color:var(--saffron)" /></td>
+                <td><strong>Rohit Gupta</strong><div style="font-size:11px;color:var(--text-muted);">Class 9</div></td>
+                <td>Copy of a Copy</td>
+                <td>DAV, Lucknow</td>
+                <td>📜 Poem</td>
+                <td><span class="lang-chip">Hindi</span></td>
+                <td style="color:#dc2626; font-weight:700;">68% ⚠️</td>
+                <td style="color:#dc2626;">✗</td>
+                <td><span class="badge badge-rejected">Rejected</span></td>
+                <td style="white-space:nowrap; font-size:12px;">Mar 16, 2025</td>
+                <td><div class="action-btns"><span style="font-size:11px;color:var(--text-muted);">Auto-rejected</span></div></td>
+              </tr>
+              <tr id="row-a004">
+                <td><input type="checkbox" style="accent-color:var(--saffron)" /></td>
+                <td><strong>Deepa Venkat</strong><div style="font-size:11px;color:var(--text-muted);">Class 11</div></td>
+                <td>The Weaver's Daughter</td>
+                <td>PSBB, Chennai</td>
+                <td>📚 Story</td>
+                <td><span class="lang-chip">Tamil</span></td>
+                <td style="color:var(--india-green); font-weight:700;">7%</td>
+                <td style="color:var(--india-green); font-weight:600;">✓</td>
+                <td><span class="badge badge-approved">Approved</span></td>
+                <td style="white-space:nowrap; font-size:12px;">Mar 15, 2025</td>
+                <td><div class="action-btns">
+                  <button class="act-btn feature" data-id="a004" data-action="feature">⭐</button>
+                </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="padding:var(--space-lg); display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--border); font-size:13px; color:var(--text-muted);">
+          <span>Showing 1–20 of 2,418</span>
+          <div style="display:flex; gap:4px;">
+            <button class="btn btn-ghost btn-sm">← Prev</button>
+            <button class="btn btn-primary btn-sm">1</button>
+            <button class="btn btn-ghost btn-sm">2</button>
+            <button class="btn btn-ghost btn-sm">3</button>
+            <button class="btn btn-ghost btn-sm">Next →</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /submissions -->
+
+
+    <!-- ── FEATURED SECTION ────────────────────────────────── -->
+    <div class="admin-section" id="admin-featured" style="display:none;">
+      <div class="admin-header">
+        <h1>Featured Poems Manager</h1>
+        <span style="font-size:13px; color:var(--text-muted);">Max 3 poems can be featured at a time</span>
+      </div>
+
+      <div style="background:rgba(255,153,51,0.06); border:1.5px solid rgba(255,153,51,0.3); border-radius:var(--r-lg); padding:var(--space-lg); margin-bottom:var(--space-xl);">
+        <div style="font-size:13px; font-weight:700; color:var(--saffron); margin-bottom:var(--space-md);">⭐ Currently Featured (3/3 slots used)</div>
+        <div style="display:flex; flex-direction:column; gap:var(--space-sm);">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:var(--space-md); background:var(--bg-card); border-radius:var(--r-md); border:1px solid var(--border);">
+            <div style="display:flex; align-items:center; gap:var(--space-md);">
+              <span style="background:var(--saffron); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:var(--r-full);">Rank #1</span>
+              <div>
+                <div style="font-weight:600; font-size:14px;">The River Remembers</div>
+                <div style="font-size:12px; color:var(--text-muted);">Ananya Sharma · DPS Delhi</div>
+              </div>
+            </div>
+            <button class="act-btn reject" onclick="window.Toast?.show('Removed from featured','info',2000)">Remove</button>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:var(--space-md); background:var(--bg-card); border-radius:var(--r-md); border:1px solid var(--border);">
+            <div style="display:flex; align-items:center; gap:var(--space-md);">
+              <span style="background:var(--india-green); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:var(--r-full);">Rank #2</span>
+              <div>
+                <div style="font-weight:600; font-size:14px;">Iron and Ink</div>
+                <div style="font-size:12px; color:var(--text-muted);">Rajan Mehta · KV Chandigarh</div>
+              </div>
+            </div>
+            <button class="act-btn reject" onclick="window.Toast?.show('Removed from featured','info',2000)">Remove</button>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:var(--space-md); background:var(--bg-card); border-radius:var(--r-md); border:1px solid var(--border);">
+            <div style="display:flex; align-items:center; gap:var(--space-md);">
+              <span style="background:var(--navy); color:#fff; font-size:11px; font-weight:700; padding:4px 10px; border-radius:var(--r-full);">Rank #3</span>
+              <div>
+                <div style="font-weight:600; font-size:14px;">माँ की रोटियाँ</div>
+                <div style="font-size:12px; color:var(--text-muted);">Priya Nair · Navodaya Patna</div>
+              </div>
+            </div>
+            <button class="act-btn reject" onclick="window.Toast?.show('Removed from featured','info',2000)">Remove</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-table-wrap">
+        <div class="admin-table-header">
+          <h2>Approved Poems (eligible for featuring)</h2>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead>
+              <tr><th>Title</th><th>Author</th><th>School</th><th>Language</th><th>Reads</th><th>Action</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Billion Stars</strong></td><td>Arjun Patel</td><td>Udgam, Ahmedabad</td><td><span class="lang-chip">Gujarati</span></td><td>342</td><td><button class="act-btn feature" onclick="window.Toast?.show('All 3 slots are currently full. Remove one first.','warning',3000)">⭐ Feature</button></td></tr>
+              <tr><td><strong>December Morning</strong></td><td>Pooja Sharma</td><td>St. Xavier's, Jaipur</td><td><span class="lang-chip">Hindi</span></td><td>228</td><td><button class="act-btn feature" onclick="window.Toast?.show('All 3 slots are currently full. Remove one first.','warning',3000)">⭐ Feature</button></td></tr>
+              <tr><td><strong>Garden of Silence</strong></td><td>Meera Krishnan</td><td>Vidya Niketan, Bengaluru</td><td><span class="lang-chip">Kannada</span></td><td>189</td><td><button class="act-btn feature" onclick="window.Toast?.show('All 3 slots are currently full. Remove one first.','warning',3000)">⭐ Feature</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /featured -->
+
+
+    <!-- ── PAYMENTS SECTION ────────────────────────────────── -->
+    <div class="admin-section" id="admin-payments" style="display:none;">
+      <div class="admin-header">
+        <h1>Payments</h1>
+        <div style="font-size:13px; color:var(--text-muted);">All amounts in INR · Powered by Razorpay</div>
+      </div>
+
+      <div class="stats-row" style="grid-template-columns: repeat(3,1fr); margin-bottom:var(--space-xl);">
+        <div class="stat-card" style="border-left:3px solid var(--india-green);">
+          <div class="stat-card-value">₹94,082</div>
+          <div class="stat-card-label">Total Collected</div>
+          <div class="stat-card-trend up">2,418 transactions</div>
+        </div>
+        <div class="stat-card" style="border-left:3px solid var(--saffron);">
+          <div class="stat-card-value">₹6,958</div>
+          <div class="stat-card-label">This Week</div>
+          <div class="stat-card-trend up">↑ 142 new payments</div>
+        </div>
+        <div class="stat-card" style="border-left:3px solid var(--chakra-blue);">
+          <div class="stat-card-value">₹38.92</div>
+          <div class="stat-card-label">Avg per Transaction</div>
+          <div class="stat-card-trend neutral">After GST &amp; fees</div>
+        </div>
+      </div>
+
+      <div class="admin-table-wrap">
+        <div class="admin-table-header"><h2>Recent Transactions</h2></div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead><tr><th>Payment ID</th><th>Author</th><th>Amount</th><th>Method</th><th>Status</th><th>Date</th></tr></thead>
+            <tbody>
+              <tr><td style="font-family:var(--font-mono);font-size:12px;">pay_QrT8xK2mNpL9</td><td>Ananya Sharma</td><td style="color:var(--india-green);font-weight:600;">₹57.82</td><td>UPI</td><td><span class="badge badge-approved">Captured</span></td><td>Mar 17, 2025</td></tr>
+              <tr><td style="font-family:var(--font-mono);font-size:12px;">pay_QrS7wJ1lMoK8</td><td>Vikram Kumar</td><td style="color:var(--india-green);font-weight:600;">₹57.82</td><td>Debit Card</td><td><span class="badge badge-approved">Captured</span></td><td>Mar 17, 2025</td></tr>
+              <tr><td style="font-family:var(--font-mono);font-size:12px;">pay_QrR6vI0kLnJ7</td><td>Zainab Khan</td><td style="color:var(--india-green);font-weight:600;">₹57.82</td><td>PhonePe</td><td><span class="badge badge-approved">Captured</span></td><td>Mar 16, 2025</td></tr>
+              <tr><td style="font-family:var(--font-mono);font-size:12px;">pay_QrQ5uH9jKmI6</td><td>Rohit Gupta</td><td style="color:#dc2626;font-weight:600;">₹57.82</td><td>Net Banking</td><td><span class="badge badge-rejected">Refunded</span></td><td>Mar 16, 2025</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- /payments -->
+
+
+    <!-- ── AUTHORS SECTION ─────────────────────────────────── -->
+    <div class="admin-section" id="admin-users" style="display:none;">
+      <div class="admin-header">
+        <h1>Authors</h1>
+        <input type="search" class="filter-search" placeholder="Search authors..." style="max-width:280px;" />
+      </div>
+
+      <div class="admin-table-wrap">
+        <div class="admin-table-header"><h2>Registered Authors (2,418)</h2></div>
+        <div style="overflow-x:auto;">
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>School</th><th>City · State</th><th>Class</th><th>Works</th><th>Paid</th><th>Joined</th></tr></thead>
+            <tbody>
+              <tr><td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">AS</div><strong>Ananya Sharma</strong></div></td><td>DPS, Delhi</td><td>Delhi · Delhi</td><td>11</td><td>3 poems</td><td style="color:var(--india-green);font-weight:600;">₹173.46</td><td>Mar 2025</td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">VK</div><strong>Vikram Kumar</strong></div></td><td>St. Xavier's, Patna</td><td>Patna · Bihar</td><td>10</td><td>1 story</td><td style="color:var(--india-green);font-weight:600;">₹57.82</td><td>Mar 2025</td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">ZK</div><strong>Zainab Khan</strong></div></td><td>Bombay Scottish</td><td>Mumbai · Maharashtra</td><td>12</td><td>2 stories</td><td style="color:var(--india-green);font-weight:600;">₹115.64</td><td>Mar 2025</td></tr>
+              <tr><td><div style="display:flex;align-items:center;gap:8px;"><div class="avatar">DV</div><strong>Deepa Venkat</strong></div></td><td>PSBB, Chennai</td><td>Chennai · Tamil Nadu</td><td>11</td><td>1 story</td><td style="color:var(--india-green);font-weight:600;">₹57.82</td><td>Mar 2025</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SETTINGS SECTION ────────────────────────────────── -->
+    <div class="admin-section" id="admin-settings" style="display:none;">
+      <div class="admin-header"><h1>Platform Settings</h1></div>
+
+      <div style="max-width:640px; display:flex; flex-direction:column; gap:var(--space-lg);">
+
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-lg); padding:var(--space-xl);">
+          <h3 style="font-size:15px; font-weight:700; margin-bottom:var(--space-md); color:var(--text-primary);">🛡️ Anti-Plagiarism Settings</h3>
+          <div class="form-group">
+            <label class="form-label">Plagiarism Rejection Threshold</label>
+            <div style="display:flex; align-items:center; gap:var(--space-md);">
+              <input type="range" min="5" max="40" value="20" id="plagiarism-threshold" style="flex:1; accent-color:var(--saffron);" oninput="document.getElementById('threshold-val').textContent=this.value+'%'" />
+              <span id="threshold-val" style="font-size:14px; font-weight:700; color:var(--saffron); min-width:40px;">20%</span>
+            </div>
+            <p class="form-hint">Submissions above this similarity % will be auto-rejected.</p>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-lg); padding:var(--space-xl);">
+          <h3 style="font-size:15px; font-weight:700; margin-bottom:var(--space-md); color:var(--text-primary);">💳 Payment Settings</h3>
+          <div class="form-group">
+            <label class="form-label">Submission Fee (₹)</label>
+            <input type="number" class="form-input" value="49" min="0" max="999" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Razorpay Key ID</label>
+            <input type="text" class="form-input" value="rzp_test_••••••••••••••" readonly style="font-family:var(--font-mono); color:var(--text-muted);" />
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-lg); padding:var(--space-xl);">
+          <h3 style="font-size:15px; font-weight:700; margin-bottom:var(--space-md); color:var(--text-primary);">🌐 Platform Status</h3>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-md);">
+            <div>
+              <div style="font-weight:600; font-size:14px;">Submissions Open</div>
+              <div style="font-size:12px; color:var(--text-muted);">Allow new submissions from students</div>
+            </div>
+            <button onclick="this.textContent = this.textContent === 'Open' ? 'Closed' : 'Open'; this.style.background = this.textContent==='Open'?'var(--india-green)':'#dc2626'; window.Toast?.show('Submission status updated','success',2000)"
+              style="padding:6px 20px; border-radius:var(--r-full); background:var(--india-green); color:#fff; border:none; font-weight:700; font-size:13px; cursor:pointer;">Open</button>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-lg" onclick="window.Toast?.show('Settings saved successfully ✅','success',2500)" style="border-radius:var(--r-md);">
+          Save Settings
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div><!-- /admin-wrap -->
+
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<script src="js/script.js"></script>
+<script>
+  // Countdown to March 21, 2025
+  (function() {
+    const el = document.getElementById('countdown-val');
+    if (!el) return;
+    const target = new Date('2025-03-21T00:00:00+05:30');
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) { el.textContent = '🚀 Launched!'; return; }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    el.textContent = `${days}d ${hours}h`;
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font="sans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Read original short stories by Indian school students — verified and published on Young India Writes." />
+  <title>Short Stories — Young India Writes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div id="progress-bar" style="width:0"></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-main">Young India Writes</span><span class="logo-sub">🇮🇳 Every Voice Matters</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="poems.html">Poems</a></li>
+      <li><a href="stories.html" class="active">Stories</a></li>
+      <li><a href="about.html">About</a></li><li><a href="submit.html">Submit Work</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="font-switcher"><button class="font-trigger" id="font-trigger" aria-expanded="false">Aa ▾</button>
+        <div class="font-dropdown" id="font-dropdown">
+          <div class="font-option active" data-font="sans">SF Pro Display <span class="font-preview" style="font-family:Inter">Aa</span></div>
+          <div class="font-option" data-font="serif">Times New Roman <span class="font-preview" style="font-family:'Playfair Display'">Aa</span></div>
+          <div class="font-option" data-font="typewriter">Typewriter <span class="font-preview" style="font-family:'Courier Prime'">Aa</span></div>
+        </div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle">🌙</button>
+      <a href="submit.html" class="btn btn-primary nav-cta">✍️ Submit</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav-panel" id="mobile-nav-panel">
+  <ul class="nav-links mobile-nav-links">
+    <li><a href="index.html">🏠 Home</a></li><li><a href="poems.html">📜 Poems</a></li>
+    <li><a href="stories.html">📚 Stories</a></li><li><a href="about.html">👤 About</a></li>
+    <li><a href="submit.html">✍️ Submit Work</a></li>
+  </ul>
+  <div class="mobile-nav-font-row">
+    <button class="mobile-font-btn active" data-font="sans">SF Pro</button>
+    <button class="mobile-font-btn" data-font="serif">Times NR</button>
+    <button class="mobile-font-btn" data-font="typewriter">Typewriter</button>
+  </div>
+</div>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+
+<header class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Short Stories</span></nav>
+    <div class="eyebrow">📚 Prose &amp; Fiction</div>
+    <h1 class="section-title" style="font-size:clamp(2rem,4vw,3rem)">Short Stories from Young India</h1>
+    <p class="section-desc">Original prose by students — from 500-word flash fiction to 3,000-word literary shorts. Every story verified original by our AI engine.</p>
+  </div>
+</header>
+
+<main style="padding:var(--space-2xl) 0;">
+  <div class="container">
+    <div class="filter-bar">
+      <input type="search" class="filter-search" placeholder="Search stories, authors..." />
+      <select class="filter-select">
+        <option>All Genres</option><option>Coming of Age</option><option>Urban Life</option>
+        <option>Rural India</option><option>Historical Fiction</option><option>Fantasy</option>
+        <option>Family</option><option>Social</option>
+      </select>
+      <select class="filter-select">
+        <option>Any Length</option><option>Flash (Under 1000)</option>
+        <option>Short (1000–2000)</option><option>Medium (2000–3000)</option>
+      </select>
+    </div>
+
+    <div class="stories-stack">
+
+      <a href="#" class="story-card">
+        <div class="story-card-img"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80" alt="School in Bihar" loading="lazy"/></div>
+        <div class="story-card-body">
+          <div class="story-cat">🏫 Coming of Age · Bihar</div>
+          <h2 class="story-title">The Last Bench</h2>
+          <p class="story-excerpt">In a government school in Bihar, a boy who sits at the last bench discovers that the view from the back reveals truths the front row never sees. A story about invisibility, dignity, and the quiet revolution of a child who teaches himself to read while the teacher faces the blackboard...</p>
+          <div class="story-meta"><span class="avatar lg">VK</span><strong>Vikram Kumar</strong><span>·</span>Class 10 · St. Xavier's, Patna<span>·</span>8 min read<span class="lang-chip">Hindi</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="story-card">
+        <div class="story-card-img"><img src="https://images.unsplash.com/photo-1576153192396-180ecef2a715?w=700&q=80" alt="Mumbai street" loading="lazy"/></div>
+        <div class="story-card-body">
+          <div class="story-cat">🌆 Urban Life · Mumbai</div>
+          <h2 class="story-title">Signal No. 7</h2>
+          <p class="story-excerpt">Every day at signal number 7 on the Western Express Highway, a girl from Dharavi sells flowers. One evening, she meets the son of the man whose company is building on her village's land. Neither of them will forget what was said in those thirty-five seconds before the light turned green...</p>
+          <div class="story-meta"><span class="avatar lg">ZK</span><strong>Zainab Khan</strong><span>·</span>Class 12 · Bombay Scottish<span>·</span>12 min read<span class="lang-chip">English</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="story-card">
+        <div class="story-card-img"><img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=700&q=80" alt="Village India" loading="lazy"/></div>
+        <div class="story-card-body">
+          <div class="story-cat">🌾 Rural India · Rajasthan</div>
+          <h2 class="story-title">The Well at the Edge of Town</h2>
+          <p class="story-excerpt">A seven-year-old girl in a Rajasthani village walks two kilometers to fetch water every morning. The well at the edge of town is old, wise, and — she is certain — alive. A magical realist fable about scarcity, womanhood, and the stories water carries across generations...</p>
+          <div class="story-meta"><span class="avatar lg">LR</span><strong>Lakshmi Rajput</strong><span>·</span>Class 9 · Maharani School, Jaipur<span>·</span>10 min read<span class="lang-chip">Rajasthani</span></div>
+        </div>
+      </a>
+
+      <a href="#" class="story-card">
+        <div class="story-card-img"><img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=700&q=80" alt="Textile weaving" loading="lazy"/></div>
+        <div class="story-card-body">
+          <div class="story-cat">🧵 Historical Fiction · Tamil Nadu</div>
+          <h2 class="story-title">The Weaver's Daughter</h2>
+          <p class="story-excerpt">Set in 1943 colonial Tamil Nadu, a young weaver's daughter discovers that the sari she is weaving for the landlord's wife contains a hidden message from the freedom movement — and must decide whether to finish the cloth, even knowing what finishing it might cost...</p>
+          <div class="story-meta"><span class="avatar lg">DV</span><strong>Deepa Venkat</strong><span>·</span>Class 11 · PSBB, Chennai<span>·</span>15 min read<span class="lang-chip">Tamil</span></div>
+        </div>
+      </a>
+
+    </div>
+    <div style="text-align:center; margin-top:var(--space-2xl);">
+      <button class="btn btn-secondary btn-lg">Load More Stories</button>
+    </div>
+  </div>
+</main>
+
+<aside class="newsletter-banner">
+  <div class="container">
+    <h2 style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin-bottom:8px;">New Stories Every Week 📖</h2>
+    <p>Subscribe to read the best student fiction from India.</p>
+    <form class="newsletter-form" id="newsletter-form" novalidate>
+      <input type="email" class="newsletter-input" placeholder="your@email.com" required />
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</aside>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><span class="logo-main">Young India Writes</span><span class="logo-sub">🇮🇳 Every Voice Matters</span></a><p class="footer-brand-desc">Original student literature from across India.</p></div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="poems.html">Poems</a></li><li><a href="stories.html">Stories</a></li><li><a href="submit.html">Submit</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="#">Anti-Plagiarism</a></li><li><a href="#">Guidelines</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Twitter</a></li><li><a href="mailto:hello@youngindiawr.in">Email</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Young India Writes</span><div class="footer-made-in">Made with ❤️ in 🇮🇳</div></div>
+  </div>
+</footer>
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+<button class="scroll-top-btn" aria-label="Scroll to top">↑</button>
+<script src="js/script.js"></script>
+</body>
+</html>

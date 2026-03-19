@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font="sans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Read original poems by Indian school students — filtered by city, language, and class. Published on Young India Writes." />
+  <title>Poems — Young India Writes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div id="progress-bar" style="width:0" aria-hidden="true"></div>
+
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">Young India Writes</span>
+      <span class="logo-sub">🇮🇳 Every Voice Matters</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="poems.html" class="active">Poems</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="submit.html">Submit Work</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="font-switcher">
+        <button class="font-trigger" id="font-trigger" aria-expanded="false">Aa ▾</button>
+        <div class="font-dropdown" id="font-dropdown">
+          <div class="font-option active" data-font="sans">SF Pro Display <span class="font-preview" style="font-family:Inter">Aa</span></div>
+          <div class="font-option" data-font="serif">Times New Roman <span class="font-preview" style="font-family:'Playfair Display'">Aa</span></div>
+          <div class="font-option" data-font="typewriter">Typewriter <span class="font-preview" style="font-family:'Courier Prime'">Aa</span></div>
+        </div>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+      <a href="submit.html" class="btn btn-primary nav-cta">✍️ Submit Work</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav-panel" id="mobile-nav-panel">
+  <ul class="nav-links mobile-nav-links">
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="poems.html">📜 Poems</a></li>
+    <li><a href="stories.html">📚 Stories</a></li>
+    <li><a href="about.html">👤 About</a></li>
+    <li><a href="submit.html">✍️ Submit Work</a></li>
+  </ul>
+  <div class="mobile-nav-font-row">
+    <button class="mobile-font-btn active" data-font="sans">SF Pro</button>
+    <button class="mobile-font-btn" data-font="serif">Times NR</button>
+    <button class="mobile-font-btn" data-font="typewriter">Typewriter</button>
+  </div>
+</div>
+<div class="mobile-overlay" id="mobile-overlay"></div>
+
+<!-- Page Header -->
+<header class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span aria-current="page">Poems</span>
+    </nav>
+    <div class="eyebrow">📜 Poetry Collection</div>
+    <h1 class="section-title" style="font-size:clamp(2rem,4vw,3rem);">Poems from Across India</h1>
+    <p class="section-desc">
+      <strong id="poem-count">124</strong> original poems — anti-plagiarism verified, written by students from Classes 6–12, in 12 Indian languages.
+    </p>
+  </div>
+</header>
+
+<main style="padding:var(--space-2xl) 0;">
+  <div class="container">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="search" aria-label="Filter poems">
+      <input type="search" class="filter-search" id="filter-search"
+        placeholder="Search poems, authors, schools..." aria-label="Search poems" />
+      <select class="filter-select" id="filter-city" aria-label="Filter by city">
+        <option value="">All Cities</option>
+        <option>Delhi</option><option>Mumbai</option><option>Chennai</option>
+        <option>Kolkata</option><option>Bengaluru</option><option>Hyderabad</option>
+        <option>Patna</option><option>Jaipur</option><option>Varanasi</option>
+        <option>Ahmedabad</option><option>Lucknow</option><option>Bhopal</option>
+      </select>
+      <select class="filter-select" id="filter-language" aria-label="Filter by language">
+        <option value="">All Languages</option>
+        <option>English</option><option>Hindi</option><option>Tamil</option>
+        <option>Telugu</option><option>Marathi</option><option>Bengali</option>
+        <option>Gujarati</option><option>Kannada</option><option>Malayalam</option>
+        <option>Odia</option><option>Punjabi</option><option>Urdu</option>
+      </select>
+      <select class="filter-select" id="filter-class" aria-label="Filter by class">
+        <option value="">All Classes</option>
+        <option>Class 6</option><option>Class 7</option><option>Class 8</option>
+        <option>Class 9</option><option>Class 10</option><option>Class 11</option>
+        <option>Class 12</option>
+      </select>
+    </div>
+
+    <!-- Poem Grid -->
+    <div class="poems-grid" id="poems-grid" aria-live="polite" aria-label="Poem list">
+
+      <article class="poem-card" data-city="Delhi" data-lang="Hindi" data-class="Class 11" tabindex="0" role="article">
+        <div class="poem-card-title">The River Remembers</div>
+        <p class="poem-card-lines">
+          The river carries whispers of a thousand monsoons,<br>
+          Past the mango groves where my grandmother hummed,<br>
+          It remembers what we have forgotten —<br>
+          The language of rain and the silence of dusk.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 DPS, Delhi · Class 11 · Ananya Sharma</span>
+          <span class="lang-chip">Hindi</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Mumbai" data-lang="English" data-class="Class 10">
+        <div class="poem-card-title">Iron and Ink</div>
+        <p class="poem-card-lines">
+          My pen is the only sword I carry to school,<br>
+          sharper than hunger, mightier than rule.<br>
+          They gave me a uniform but not a choice,<br>
+          so I folded my anger into verse and voice.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 KV, Chandigarh · Class 10 · Rajan Mehta</span>
+          <span class="lang-chip">English</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Patna" data-lang="Hindi" data-class="Class 9">
+        <div class="poem-card-title">माँ की रोटियाँ</div>
+        <p class="poem-card-lines">
+          हर रोटी में एक कहानी बंद है,<br>
+          माँ की उँगलियों का प्यार उसमें मंद है,<br>
+          जब भी भूख लगती है, याद आती है वो गोल थाली,<br>
+          जिसमें था घी, प्यार और जीवन की हरियाली।
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 Navodaya, Patna · Class 9 · Priya Nair</span>
+          <span class="lang-chip">Hindi</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Bengaluru" data-lang="Kannada" data-class="Class 8">
+        <div class="poem-card-title">Whispering Forests</div>
+        <p class="poem-card-lines">
+          Where sunlight threads through ancient oak,<br>
+          and silence teaches what textbooks forgot —<br>
+          the grammar of wind, the syntax of roots,<br>
+          spelling out a world in photosynthesis and shoots.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 NPS, Bengaluru · Class 8 · Kabir Das</span>
+          <span class="lang-chip">Kannada</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Chennai" data-lang="Tamil" data-class="Class 11">
+        <div class="poem-card-title">A Uniform Too Tight</div>
+        <p class="poem-card-lines">
+          They dressed me in their hopes and called it education,<br>
+          stitched in cotton and expectation.<br>
+          But underneath the collar's chafe<br>
+          blooms a self they never made safe.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 DAV, Chennai · Class 11 · Shreya Iyer</span>
+          <span class="lang-chip">Tamil</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Varanasi" data-lang="Hindi" data-class="Class 7">
+        <div class="poem-card-title">First Rain</div>
+        <p class="poem-card-lines">
+          When the first drop lands on dry earth,<br>
+          the whole city holds its breath and prays —<br>
+          even the dogs go quiet, even the crows retreat,<br>
+          as the smell of petrichor turns the street to song.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 Sunbeam, Varanasi · Class 7 · Tarun Mishra</span>
+          <span class="lang-chip">Hindi</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Ahmedabad" data-lang="Gujarati" data-class="Class 12">
+        <div class="poem-card-title">Billion Stars</div>
+        <p class="poem-card-lines">
+          One billion dreams turned skyward each night,<br>
+          one billion candles refusing the dark.<br>
+          If you counted us star by star<br>
+          you'd run out of numbers before we ran out of heart.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 Udgam School · Class 12 · Arjun Patel</span>
+          <span class="lang-chip">Gujarati</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Bengaluru" data-lang="Kannada" data-class="Class 9">
+        <div class="poem-card-title">Garden of Silence</div>
+        <p class="poem-card-lines">
+          Between the jasmine and the red hibiscus,<br>
+          grandmother kept a garden that needed no words.<br>
+          Her hands spoke — press, water, wait —<br>
+          the only prayer that always bore fruit.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 Vidya Niketan · Class 9 · Meera Krishnan</span>
+          <span class="lang-chip">Kannada</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Jaipur" data-lang="Hindi" data-class="Class 8">
+        <div class="poem-card-title">December Morning</div>
+        <p class="poem-card-lines">
+          Fog erases the rooftops at 6 AM,<br>
+          and for one hour, every street belongs to no one.<br>
+          The milkman is a ghost with a bicycle,<br>
+          and I am the only witness to this vanishing.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 St. Xavier's, Jaipur · Class 8 · Pooja Sharma</span>
+          <span class="lang-chip">Hindi</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Kolkata" data-lang="Bengali" data-class="Class 10">
+        <div class="poem-card-title">The Bridge at Howrah</div>
+        <p class="poem-card-lines">
+          Eight million footsteps cross you daily,<br>
+          each one carrying a hunger home —<br>
+          for rice, for work, for someone's voice<br>
+          calling from a lit window in the rain.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 La Martiniere · Class 10 · Rina Ghosh</span>
+          <span class="lang-chip">Bengali</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Hyderabad" data-lang="Telugu" data-class="Class 11">
+        <div class="poem-card-title">Exam Season</div>
+        <p class="poem-card-lines">
+          March is the cruelest month —<br>
+          not for Eliot, but for us,<br>
+          who sit in borrowed light<br>
+          memorizing answers to questions nobody asked.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 Narayana School · Class 11 · Ravi Kumar</span>
+          <span class="lang-chip">Telugu</span>
+        </div>
+      </article>
+
+      <article class="poem-card" data-city="Delhi" data-lang="Urdu" data-class="Class 12">
+        <div class="poem-card-title">Dilli ki Raat</div>
+        <p class="poem-card-lines">
+          Purani haveli ke darwaze par<br>
+          ek raat phir dastak di usne —<br>
+          shaayad woh hai jo kabhi gaya tha,<br>
+          ya main hi hun jo laut aayi.
+        </p>
+        <div class="poem-card-footer">
+          <span>🏫 Modern School, Delhi · Class 12 · Saba Mirza</span>
+          <span class="lang-chip">Urdu</span>
+        </div>
+      </article>
+
+    </div><!-- /poems-grid -->
+
+    <div id="no-results" style="display:none; text-align:center; padding:var(--space-3xl) 0; color:var(--text-muted); font-size:18px;" role="alert">
+      🔍 No poems match your filters.
+      <a href="#" id="clear-filters" style="color:var(--saffron);">Clear all filters</a>
+    </div>
+
+    <!-- Load More -->
+    <div style="text-align:center; margin-top:var(--space-2xl);">
+      <button class="btn btn-secondary btn-lg" onclick="this.textContent='Loading…'; setTimeout(()=>{this.textContent='Load More Poems'; window.Toast?.show('All poems loaded!','info',2000)},1200)">
+        Load More Poems
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<!-- Newsletter -->
+<aside class="newsletter-banner">
+  <div class="container">
+    <h2 style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin-bottom:8px;">
+      Get New Poems Every Week 📬
+    </h2>
+    <p>Weekly digest of the best student poetry from across India.</p>
+    <form class="newsletter-form" id="newsletter-form" novalidate>
+      <input type="email" class="newsletter-input" placeholder="your@email.com" required />
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</aside>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><span class="logo-main">Young India Writes</span><span class="logo-sub">🇮🇳 Every Voice Matters</span></a>
+        <p class="footer-brand-desc">Original student literature from across India.</p>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="poems.html">Poems</a></li><li><a href="stories.html">Stories</a></li><li><a href="submit.html">Submit</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="#">Anti-Plagiarism</a></li><li><a href="#">Guidelines</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Twitter</a></li><li><a href="mailto:hello@youngindiawr.in">Email</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Young India Writes</span>
+      <div class="footer-made-in">Made with ❤️ in 🇮🇳 India</div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+<button class="scroll-top-btn" aria-label="Scroll to top">↑</button>
+<script src="js/script.js"></script>
+</body>
+</html>

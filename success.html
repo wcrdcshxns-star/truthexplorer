@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font="sans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Submission Received — Young India Writes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Confetti burst */
+    .confetti-container {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 9998;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute;
+      width: 10px; height: 10px;
+      border-radius: 2px;
+      animation: confetti-fall linear forwards;
+    }
+    @keyframes confetti-fall {
+      0%   { transform: translateY(-20px) rotate(0deg);   opacity: 1; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+    @keyframes checkmark-pop {
+      0%   { transform: scale(0) rotate(-15deg); opacity: 0; }
+      60%  { transform: scale(1.15) rotate(5deg); opacity: 1; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    .success-icon { animation: checkmark-pop 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.3s both; }
+  </style>
+</head>
+<body>
+
+<div class="confetti-container" id="confetti" aria-hidden="true"></div>
+<div id="progress-bar" style="width:100%"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">Young India Writes</span>
+      <span class="logo-sub">🇮🇳 Every Voice Matters</span>
+    </a>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<main class="success-page">
+  <div class="success-card">
+
+    <div class="success-icon" role="img" aria-label="Success checkmark">✅</div>
+
+    <h1 class="success-title">You're Published, <span id="success-author" style="color:var(--saffron);">Writer</span>!</h1>
+
+    <p class="success-desc">
+      Your work has been received and is now in editorial review. Once approved (typically within 48 hours),
+      it will be live on Young India Writes for all of India to read.
+      <br><br>
+      A confirmation email with your <strong>digital publication certificate</strong> will be sent to your registered email address.
+    </p>
+
+    <!-- Payment ID -->
+    <div class="success-id" id="success-payment-id" aria-label="Payment reference">
+      🧾 Payment ID: Confirming...
+    </div>
+
+    <!-- What Happens Next -->
+    <div style="background:var(--bg-secondary); border-radius:var(--r-lg); padding:var(--space-lg); margin-bottom:var(--space-xl); text-align:left;">
+      <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:var(--space-md);">📋 What Happens Next</div>
+      <div style="display:flex; flex-direction:column; gap:var(--space-md);">
+        <div style="display:flex; gap:var(--space-md); align-items:flex-start;">
+          <div style="width:28px; height:28px; border-radius:50%; background:var(--saffron-pale); color:var(--saffron); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; border:1.5px solid var(--saffron);">1</div>
+          <div>
+            <div style="font-size:13.5px; font-weight:600; color:var(--text-primary);">Editorial Review (24–48 hrs)</div>
+            <div style="font-size:12.5px; color:var(--text-muted); margin-top:2px;">Our team reads every submission and checks it against our publication standards.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:var(--space-md); align-items:flex-start;">
+          <div style="width:28px; height:28px; border-radius:50%; background:var(--saffron-pale); color:var(--saffron); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; border:1.5px solid var(--saffron);">2</div>
+          <div>
+            <div style="font-size:13.5px; font-weight:600; color:var(--text-primary);">Publication Email</div>
+            <div style="font-size:12.5px; color:var(--text-muted); margin-top:2px;">You'll receive an email with a link to your published work and your digital certificate.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:var(--space-md); align-items:flex-start;">
+          <div style="width:28px; height:28px; border-radius:50%; background:var(--saffron-pale); color:var(--saffron); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; flex-shrink:0; border:1.5px solid var(--saffron);">3</div>
+          <div>
+            <div style="font-size:13.5px; font-weight:600; color:var(--text-primary);">Share with the World</div>
+            <div style="font-size:12.5px; color:var(--text-muted); margin-top:2px;">Share your published work with your school, family, and social media. You are now a published author.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div style="display:flex; flex-direction:column; gap:var(--space-sm);">
+      <a href="poems.html" class="btn btn-primary btn-block btn-lg" style="border-radius:var(--r-md); justify-content:center;">
+        📖 Read Other Poems While You Wait
+      </a>
+      <a href="index.html" class="btn btn-secondary btn-block" style="border-radius:var(--r-md); justify-content:center;">
+        🏠 Return to Home
+      </a>
+    </div>
+
+    <p style="font-size:12px; color:var(--text-muted); margin-top:var(--space-xl); line-height:1.6;">
+      Questions? Email us at
+      <a href="mailto:hello@youngindiawr.in" style="color:var(--saffron);">hello@youngindiawr.in</a>
+    </p>
+
+  </div>
+</main>
+
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<script src="js/script.js"></script>
+<script>
+  // Confetti
+  (function() {
+    const colors = ['#FF9933','#138808','#000080','#FFB347','#FFFFFF','#FFD700'];
+    const container = document.getElementById('confetti');
+    if (!container) return;
+    for (let i = 0; i < 90; i++) {
+      const el = document.createElement('div');
+      el.className = 'confetti-piece';
+      el.style.cssText = `
+        left: ${Math.random() * 100}%;
+        background: ${colors[Math.floor(Math.random() * colors.length)]};
+        width: ${6 + Math.random() * 8}px;
+        height: ${6 + Math.random() * 8}px;
+        border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+        animation-duration: ${2 + Math.random() * 2.5}s;
+        animation-delay: ${Math.random() * 1.2}s;
+        opacity: ${0.7 + Math.random() * 0.3};
+      `;
+      container.appendChild(el);
+    }
+    setTimeout(() => container.remove(), 5000);
+  })();
+</script>
+</body>
+</html>

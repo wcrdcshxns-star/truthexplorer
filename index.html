@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-font="sans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Young India Writes — India's national platform for original student poetry and short stories. Submit your work, get published, earn recognition." />
+  <meta property="og:title"       content="Young India Writes — Every Voice Deserves Permanence" />
+  <meta property="og:description" content="India's first national digital stage for school students writing in any Indian language." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://youngindiawr.in" />
+  <title>Young India Writes — Every Voice Deserves Permanence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ── Progress ──────────────────────────────────────────────-->
+<div id="progress-bar" role="progressbar" aria-hidden="true" style="width:0"></div>
+
+<!-- ── Navigation ────────────────────────────────────────────-->
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="nav-inner">
+
+    <a href="index.html" class="nav-logo" aria-label="Young India Writes — home">
+      <span class="logo-main">Young India Writes</span>
+      <span class="logo-sub">🇮🇳 Every Voice Matters</span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"  class="active">Home</a></li>
+      <li><a href="poems.html">Poems</a></li>
+      <li><a href="stories.html">Stories</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="submit.html">Submit Work</a></li>
+    </ul>
+
+    <div class="nav-actions">
+
+      <!-- Font Switcher -->
+      <div class="font-switcher" aria-label="Font switcher">
+        <button class="font-trigger" id="font-trigger"
+          aria-expanded="false" aria-haspopup="listbox" title="Change font">
+          Aa ▾
+        </button>
+        <div class="font-dropdown" id="font-dropdown" role="listbox" aria-label="Select font">
+          <div class="font-option active" data-font="sans" role="option" tabindex="0">
+            SF Pro Display
+            <span class="font-preview" style="font-family:Inter">Aa</span>
+          </div>
+          <div class="font-option" data-font="serif" role="option" tabindex="0">
+            Times New Roman
+            <span class="font-preview" style="font-family:'Playfair Display'">Aa</span>
+          </div>
+          <div class="font-option" data-font="typewriter" role="option" tabindex="0">
+            Typewriter
+            <span class="font-preview" style="font-family:'Courier Prime'">Aa</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+
+      <!-- Submit CTA -->
+      <a href="submit.html" class="btn btn-primary nav-cta">✍️ Submit Work</a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger"
+        aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav panel -->
+<div class="mobile-nav-panel" id="mobile-nav-panel" role="dialog" aria-label="Mobile navigation">
+  <ul class="nav-links mobile-nav-links" role="list">
+    <li><a href="index.html">🏠 Home</a></li>
+    <li><a href="poems.html">📜 Poems</a></li>
+    <li><a href="stories.html">📚 Stories</a></li>
+    <li><a href="about.html">👤 About</a></li>
+    <li><a href="submit.html">✍️ Submit Work</a></li>
+  </ul>
+  <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border);">
+    <a href="submit.html" class="btn btn-primary btn-block" style="justify-content:center; margin-bottom:12px;">✍️ Submit Your Work</a>
+  </div>
+  <div class="mobile-nav-font-row">
+    <button class="mobile-font-btn active" data-font="sans">SF Pro</button>
+    <button class="mobile-font-btn" data-font="serif">Times NR</button>
+    <button class="mobile-font-btn" data-font="typewriter">Typewriter</button>
+  </div>
+</div>
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  HERO                                                      -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-bg-gradient" aria-hidden="true"></div>
+  <div class="hero-grid-pattern" aria-hidden="true"></div>
+
+  <div class="hero-content">
+
+    <div class="hero-pill" role="note">
+      <span class="hero-pill-dot" aria-hidden="true"></span>
+      Launching March 21, 2025 · International Poetry Day
+      <span class="hero-pill-flag" aria-label="Indian flag">🇮🇳</span>
+    </div>
+
+    <h1 class="hero-h1" id="hero-h1">
+      <span class="accent">Every student</span> has a voice.<br>
+      <em>This platform gives it</em><br>
+      <span class="accent-green">permanence.</span>
+    </h1>
+
+    <p class="hero-sub">
+      India's first national digital platform dedicated to publishing original poems
+      and short stories by school students — verified, celebrated, and preserved —
+      from Kanyakumari to Kashmir.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="submit.html" class="btn btn-primary btn-lg">✍️ Submit Your Work</a>
+      <a href="poems.html"  class="btn btn-secondary btn-lg">📖 Discover Poems</a>
+    </div>
+
+    <div class="hero-launch-badge" aria-label="Platform details">
+      Anti-plagiarism verified · Multi-language · Free to read
+    </div>
+
+    <!-- Stats -->
+    <div class="hero-stats" role="list">
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-value" data-count="2400">0+</span>
+        <span class="hero-stat-label">Submissions</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-value" data-count="186">0+</span>
+        <span class="hero-stat-label">Schools</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-value" data-count="23">0+</span>
+        <span class="hero-stat-label">States</span>
+      </div>
+      <div class="hero-stat" role="listitem">
+        <span class="hero-stat-value" data-count="12">0+</span>
+        <span class="hero-stat-label">Languages</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  FEATURED POEMS                                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="featured-h2">
+  <div class="container">
+
+    <div class="section-row">
+      <div>
+        <div class="eyebrow">🏆 Editor's Picks</div>
+        <h2 class="section-title" id="featured-h2">Featured Poems</h2>
+        <p class="section-desc">Our editorial team's top three selections — voices that moved us most this season.</p>
+      </div>
+      <a href="poems.html" class="btn btn-secondary">View All Poems →</a>
+    </div>
+
+    <div class="featured-grid">
+
+      <!-- #1 FEATURED -->
+      <a href="poems.html" class="feat-card" aria-label="Read 'The River Remembers' by Ananya Sharma">
+        <div class="feat-card-img">
+          <span class="feat-rank-badge rank-1" aria-label="Number 1 Featured">✦ #1 Featured</span>
+          <img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80"
+            alt="Misty river at dawn — The River Remembers"
+            loading="lazy" width="900" height="500"
+          />
+        </div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">🌊 Nature · Hindi</div>
+          <h3 class="feat-card-title">The River Remembers</h3>
+          <p class="feat-card-excerpt">
+            "The river carries whispers of a thousand monsoons,<br>
+            Past the mango groves where my grandmother hummed,<br>
+            It remembers what we have forgotten —<br>
+            The language of rain and the silence of dusk."
+          </p>
+          <div class="feat-card-meta">
+            <span class="author-chip">
+              <span class="avatar">AS</span>
+              Ananya Sharma
+            </span>
+            <span>·</span>
+            <span>Class 11 · DPS, Delhi</span>
+            <span>·</span>
+            <span>1.4k reads</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- #2 FEATURED -->
+      <a href="poems.html" class="feat-card" aria-label="Read 'Iron and Ink' by Rajan Mehta">
+        <div class="feat-card-img">
+          <span class="feat-rank-badge rank-2" aria-label="Number 2 Featured">#2 Featured</span>
+          <img
+            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&q=80"
+            alt="Student writing — Iron and Ink"
+            loading="lazy" width="700" height="400"
+          />
+        </div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">✊ Social · English</div>
+          <h3 class="feat-card-title">Iron and Ink</h3>
+          <p class="feat-card-excerpt">
+            "My pen is the only sword I carry to school,<br>
+            sharper than hunger, mightier than rule —<br>
+            I fold my anger into verse and voice,<br>
+            because silence was never a choice."
+          </p>
+          <div class="feat-card-meta">
+            <span class="author-chip">
+              <span class="avatar">RM</span>
+              Rajan Mehta
+            </span>
+            <span>·</span>
+            <span>Class 10 · KV, Chandigarh</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- #3 FEATURED -->
+      <a href="poems.html" class="feat-card" aria-label="Read 'माँ की रोटियाँ' by Priya Nair">
+        <div class="feat-card-img">
+          <span class="feat-rank-badge rank-3" aria-label="Number 3 Featured">#3 Featured</span>
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700&q=80"
+            alt="Traditional kitchen warmth — Maa ki Rotiyaan"
+            loading="lazy" width="700" height="400"
+          />
+        </div>
+        <div class="feat-card-body">
+          <div class="feat-card-cat">❤️ Family · Hindi</div>
+          <h3 class="feat-card-title">माँ की रोटियाँ</h3>
+          <p class="feat-card-excerpt">
+            "हर रोटी में एक कहानी बंद है,<br>
+            माँ की उँगलियों का प्यार उसमें मंद है,<br>
+            जब भी भूख लगती है, याद आती है वो गोल थाली..."
+          </p>
+          <div class="feat-card-meta">
+            <span class="author-chip">
+              <span class="avatar">PN</span>
+              Priya Nair
+            </span>
+            <span>·</span>
+            <span>Class 9 · Navodaya, Patna</span>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /featured-grid -->
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  CAROUSEL — LATEST POEMS                                   -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="carousel-outer" aria-labelledby="carousel-h2">
+  <div class="container">
+
+    <div class="section-row">
+      <div>
+        <div class="eyebrow">📜 Latest Works</div>
+        <h2 class="section-title" id="carousel-h2">Recently Published</h2>
+      </div>
+      <a href="poems.html" class="btn btn-secondary">View All →</a>
+    </div>
+
+    <div role="region" aria-label="Latest poems carousel" aria-roledescription="carousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carousel-track">
+
+          <article class="c-slide">
+            <div class="c-slide-img">
+              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&q=75"
+                alt="Forest illustration" loading="lazy" width="500" height="300"/>
+            </div>
+            <div class="c-slide-body">
+              <h3 class="c-slide-title">Whispering Forests</h3>
+              <p class="c-slide-author">Kabir Das · Class 8 · Mumbai</p>
+              <p class="c-slide-preview">"Where sunlight threads through ancient oak, and silence teaches what textbooks forgot..."</p>
+            </div>
+          </article>
+
+          <article class="c-slide">
+            <div class="c-slide-img">
+              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=500&q=75"
+                alt="Stars at night" loading="lazy" width="500" height="300"/>
+            </div>
+            <div class="c-slide-body">
+              <h3 class="c-slide-title">Billion Stars</h3>
+              <p class="c-slide-author">Arjun Patel · Class 12 · Ahmedabad</p>
+              <p class="c-slide-preview">"One billion dreams turned skyward each night, one billion candles refusing the dark..."</p>
+            </div>
+          </article>
+
+          <article class="c-slide">
+            <div class="c-slide-img">
+              <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc5c?w=500&q=75"
+                alt="Garden flowers" loading="lazy" width="500" height="300"/>
+            </div>
+            <div class="c-slide-body">
+              <h3 class="c-slide-title">Garden of Silence</h3>
+              <p class="c-slide-author">Meera Krishnan · Class 9 · Bengaluru</p>
+              <p class="c-slide-preview">"Between jasmine and red hibiscus, grandmother kept a garden that needed no words..."</p>
+            </div>
+          </article>
+
+          <article class="c-slide">
+            <div class="c-slide-img">
+              <img src="https://images.unsplash.com/photo-1524055988636-436cfa46e59e?w=500&q=75"
+                alt="Monsoon rain" loading="lazy" width="500" height="300"/>
+            </div>
+            <div class="c-slide-body">
+              <h3 class="c-slide-title">First Rain</h3>
+              <p class="c-slide-author">Tarun Mishra · Class 7 · Varanasi</p>
+              <p class="c-slide-preview">"When the first drop lands on dry earth, the whole city holds its breath and prays..."</p>
+            </div>
+          </article>
+
+          <article class="c-slide">
+            <div class="c-slide-img">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=75"
+                alt="Student portrait" loading="lazy" width="500" height="300"/>
+            </div>
+            <div class="c-slide-body">
+              <h3 class="c-slide-title">A Uniform Too Tight</h3>
+              <p class="c-slide-author">Shreya Iyer · Class 11 · Chennai</p>
+              <p class="c-slide-preview">"They dressed me in their hopes and called it education, stitched in cotton and expectation..."</p>
+            </div>
+          </article>
+
+          <article class="c-slide">
+            <div class="c-slide-img">
+              <img src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=500&q=75"
+                alt="Winter morning" loading="lazy" width="500" height="300"/>
+            </div>
+            <div class="c-slide-body">
+              <h3 class="c-slide-title">December Morning</h3>
+              <p class="c-slide-author">Pooja Sharma · Class 8 · Jaipur</p>
+              <p class="c-slide-preview">"Fog erases the rooftops at 6 AM, and for one hour, every street belongs to no one..."</p>
+            </div>
+          </article>
+
+        </div><!-- /carousel-track -->
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-arrow" id="c-prev" aria-label="Previous poems">‹</button>
+        <div class="carousel-dots" id="c-dots" role="tablist" aria-label="Carousel position"></div>
+        <button class="carousel-arrow" id="c-next" aria-label="Next poems">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  STORIES PREVIEW                                           -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="section" aria-labelledby="stories-h2">
+  <div class="container">
+    <div class="section-row">
+      <div>
+        <div class="eyebrow">📚 Short Stories</div>
+        <h2 class="section-title" id="stories-h2">Tales from Young India</h2>
+        <p class="section-desc">Prose that carries the weight of a generation's dreams and fears — verified original.</p>
+      </div>
+      <a href="stories.html" class="btn btn-secondary">All Stories →</a>
+    </div>
+
+    <div class="stories-stack">
+      <a href="stories.html" class="story-card">
+        <div class="story-card-img">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&q=80"
+            alt="School children in Bihar" loading="lazy" width="700" height="400"/>
+        </div>
+        <div class="story-card-body">
+          <div class="story-cat">🏫 Coming of Age · Bihar</div>
+          <h3 class="story-title">The Last Bench</h3>
+          <p class="story-excerpt">In a government school in Bihar, a boy at the last bench discovers that the view from the back reveals truths the front row never sees. A story about invisibility, dignity, and the quiet revolution of a child who teaches himself to read...</p>
+          <div class="story-meta">
+            <span class="avatar lg">VK</span>
+            <strong>Vikram Kumar</strong>
+            <span>·</span> Class 10 · St. Xavier's, Patna
+            <span>·</span> 8 min read
+            <span class="lang-chip">Hindi</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="stories.html" class="story-card">
+        <div class="story-card-img">
+          <img src="https://images.unsplash.com/photo-1576153192396-180ecef2a715?w=700&q=80"
+            alt="Mumbai street at night" loading="lazy" width="700" height="400"/>
+        </div>
+        <div class="story-card-body">
+          <div class="story-cat">🌆 Urban Life · Mumbai</div>
+          <h3 class="story-title">Signal No. 7</h3>
+          <p class="story-excerpt">Every day at signal number 7 on the Western Express Highway, a girl from Dharavi sells flowers. One evening, she meets the son of the man whose company is building on her village's land. Neither will forget what was said before the light turned green...</p>
+          <div class="story-meta">
+            <span class="avatar lg">ZK</span>
+            <strong>Zainab Khan</strong>
+            <span>·</span> Class 12 · Bombay Scottish, Mumbai
+            <span>·</span> 12 min read
+            <span class="lang-chip">English</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  MISSION STRIP                                             -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="mission-strip" aria-labelledby="mission-h2">
+  <div class="container">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.75); justify-content:center;">
+      Our Mission
+    </div>
+    <blockquote id="mission-h2">
+      "We believe the next great Indian writer is sitting in a classroom right now — waiting to be heard."
+    </blockquote>
+    <p>
+      Young India Writes creates an authenticated, plagiarism-free digital stage where students from every corner of India — regardless of English fluency, school prestige, or economic background — can publish original work and build a literary identity.
+    </p>
+    <a href="about.html" class="btn btn-secondary" style="border-color:rgba(255,255,255,0.4); color:#fff;">
+      Read Our Story →
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  NEWSLETTER                                                -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<aside class="newsletter-banner" aria-labelledby="newsletter-h2">
+  <div class="container">
+    <h2 class="newsletter-banner h2" id="newsletter-h2" style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin-bottom:8px;">
+      Stay Connected with Young India 📬
+    </h2>
+    <p>Get new poems, stories, and submission windows delivered to your inbox every week.</p>
+    <form class="newsletter-form" id="newsletter-form" novalidate>
+      <input type="email" class="newsletter-input"
+        placeholder="your@email.com" aria-label="Email address for newsletter" required />
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+  </div>
+</aside>
+
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!--  FOOTER                                                    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-main">Young India Writes</span>
+          <span class="logo-sub">🇮🇳 Every Voice Matters</span>
+        </a>
+        <p class="footer-brand-desc">
+          India's national digital platform for student poetry and short stories.
+          Authentic. Anti-plagiarism verified. For every Indian student.
+        </p>
+        <div class="footer-socials" aria-label="Social media links">
+          <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="Twitter / X">🐦</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+          <a href="mailto:hello@youngindiawr.in" class="social-btn" aria-label="Email">✉️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="poems.html">All Poems</a></li>
+          <li><a href="stories.html">Short Stories</a></li>
+          <li><a href="submit.html">Submit Work</a></li>
+          <li><a href="about.html">About the Founder</a></li>
+          <li><a href="admin.html">Admin Dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#">Anti-Plagiarism Policy</a></li>
+          <li><a href="#">Editorial Guidelines</a></li>
+          <li><a href="#">Publication Standards</a></li>
+          <li><a href="#">Student Rights</a></li>
+          <li><a href="#">Educator Guide</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Copyright Notice</a></li>
+          <li><a href="mailto:hello@youngindiawr.in">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Young India Writes. All rights reserved.</span>
+      <div class="footer-made-in">
+        Made with ❤️ in 🇮🇳 India · Powered by Razorpay &amp; Copyleaks
+      </div>
+      <span>Designed for International Poetry Day, March 21</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast container -->
+<div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<!-- Scroll to top -->
+<button class="scroll-top-btn" aria-label="Scroll to top">↑</button>
+
+<script src="js/script.js"></script>
+</body>
+</html>
